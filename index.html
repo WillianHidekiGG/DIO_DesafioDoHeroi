@@ -3,13 +3,29 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <script src="confi.js"></script>
     <title>Herói</title>
     
 </head>
 <body>
-    <div class="conteiner1">
+
+   
+
+    <div class="conteiner" id="conteiner1">
+        <h1>HERÓI OU HEROÍNA</h1>
         <input type="text" name="nome" id="nome" placeholder="Digite o nome do(a) Herói/Heroína"/>
-        <button id="confirmar" class="botao">Confirmar</button>
+        <button onclick="confirmar()">CONFIRMAR</button>
     </div>
+
+    <div id="conteiner2">
+        <h1 id="classificacaoPontos"></h1>
+        <p id="pontuação"></p>
+        <p id="nomeSuper"></p>
+        <div class="super"></div>
+        <button>ATACAR</button>
+        <div class="inimigo"></div>
+    </div>
+    
 </body>
 </html>
