@@ -15,7 +15,7 @@
     <div class="conteiner" id="conteiner1">
         <h1>HERÓI OU HEROÍNA</h1>
         <input type="text" name="nome" id="nome" placeholder="Digite o nome do(a) Herói/Heroína"/>
-        <button onclick="confirmar()">CONFIRMAR</button>
+        <button id="confirmar" onclick="confirmar()">CONFIRMAR</button>
     </div>
 
     <div id="conteiner2">
@@ -24,10 +24,20 @@
         <div class="container 3">
              <div id="super"></div>
              <div id="inimigo"></div>
-        </div>
-        <p id="nomeSuper"></p>
-        <button id="atacar">ATACAR</button>
-        
+             
+    </div>
+            <div id="container4">
+                <p id="nomeSuper"></p>
+                <div id="vidaVilao"></div>
+                
+            </div>
+        <button id="atacar" onclick="atacar()">ATACAR</button>
+        <button id="fimAventura" onclick="fimAventura()">TERMINAR A AVENTURA</button>
+    </div>
+    <div id="container5">
+        <div id="parabens"></div>
+        <div id="classificacaoFinal"></div>
+        <div id="pontosFinais"></div>
     </div>
     
 </body>
