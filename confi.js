@@ -1,6 +1,6 @@
 var pontuacao = 0;
 var classificacoes = ["FERRO","BRONZE", "PRATA", "OURO", "PLATINA", "ASCENDENTAL", "INMORTAL", "RADIANTE"]
-var vidaVilao = 4;
+var vidaVilao = 5;
 
 function confirmar(){
 var nomes = document.getElementById("nome").value;
@@ -26,7 +26,9 @@ function atacar(){
         document.getElementById("vidaVilao").innerHTML = "";
         pontuacao = pontuacao+1000;
         document.getElementById("pontuação").innerHTML ="EXPERIÊNCIA: " + pontuacao;
-        vidaVilao = 4
+        vidaVilao = +10;
+    }else if(vidaVilao === vidaVilao){
+        document.getElementById("inimigo").style.display = "block";
     }
     if(pontuacao <= 1000){
         document.getElementById("classificacaoPontos").innerHTML = "A DIFICULDADE DA SUA AVENTURA É: "  + classificacoes[0];
@@ -62,8 +64,8 @@ function atacar(){
 function fimAventura(){
     var nomes = document.getElementById("nome").value;
     document.getElementById("conteiner2").style.display = "none";
-    document.getElementById("container5").style.display = "block";
-    document.getElementById("parabens").innerHTML = "PARABENS PELA SUA AVENTURA " + nomes;
+    document.getElementById("container6").style.display = "block";
+    document.getElementById("parabens").innerHTML = "PARABÉNS PELA SUA AVENTURA " + nomes +" !";
     document.getElementById("classificacaoFinal").innerHTML = "A DIFICULDADE DA SUA AVENTURA É: "  + classificacoes[0];
     document.getElementById("pontosFinais").innerHTML ="EXPERIÊNCIA: " + pontuacao;
     if(pontuacao <= 1000){
