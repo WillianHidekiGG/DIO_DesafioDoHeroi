@@ -1,6 +1,7 @@
 var pontuacao = 0;
 var classificacoes = ["FERRO","BRONZE", "PRATA", "OURO", "PLATINA", "ASCENDENTAL", "INMORTAL", "RADIANTE"]
 var vidaVilao = 5;
+var totalVidaVilao = 5;
 
 function confirmar(){
 var nomes = document.getElementById("nome").value;
@@ -21,15 +22,17 @@ var nomes = document.getElementById("nome").value;
 function atacar(){
     document.getElementById("vidaVilao").innerHTML = vidaVilao;
     vidaVilao--;
-    if (vidaVilao == -1){
+    if (vidaVilao === -1){
         document.getElementById("inimigo").style.display = "none";
         document.getElementById("vidaVilao").innerHTML = "";
         pontuacao = pontuacao+1000;
+        totalVidaVilao = totalVidaVilao+10;
+        vidaVilao = totalVidaVilao;
         document.getElementById("pontuação").innerHTML ="EXPERIÊNCIA: " + pontuacao;
-        vidaVilao = +10;
     }else if(vidaVilao === vidaVilao){
         document.getElementById("inimigo").style.display = "block";
     }
+
     if(pontuacao <= 1000){
         document.getElementById("classificacaoPontos").innerHTML = "A DIFICULDADE DA SUA AVENTURA É: "  + classificacoes[0];
         document.getElementById("pontuação").innerHTML ="EXPERIÊNCIA: " + pontuacao;
@@ -59,6 +62,7 @@ function atacar(){
                document.getElementById("pontuação").innerHTML = "EXPERIÊNCIA: " + pontuacao;
            }
 }
+
 
 
 function fimAventura(){
