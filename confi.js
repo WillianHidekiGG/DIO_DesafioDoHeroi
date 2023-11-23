@@ -69,7 +69,8 @@ function fimAventura(){
     var nomes = document.getElementById("nome").value;
     document.getElementById("conteiner2").style.display = "none";
     document.getElementById("container6").style.display = "block";
-    document.getElementById("parabens").innerHTML = "PARABÉNS PELA SUA AVENTURA " + nomes +" !";
+    document.getElementById("parabens").innerHTML = "PARABENS !";
+    document.getElementById("texto").innerHTML = "PELA SUA AVENTURA " + nomes; 
     document.getElementById("classificacaoFinal").innerHTML = "A DIFICULDADE DA SUA AVENTURA É: "  + classificacoes[0];
     document.getElementById("pontosFinais").innerHTML ="EXPERIÊNCIA: " + pontuacao;
     if(pontuacao <= 1000){

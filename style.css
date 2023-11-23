@@ -1,3 +1,35 @@
+@font-face {
+    font-family: "MagicSound";
+    src: url("font/MagicSound.ttf") format("truetype");
+    font-weight: normal;
+    font-style: normal;
+  }
+  @font-face {
+    font-family: "MatSaleh";
+    src: url("font/MatSaleh.ttf") format("truetype"), url("font/MatSaleh.otf") format("opentype");
+    font-weight: normal;
+    font-style: normal;
+  }
+  @font-face {
+    font-family: "BERNARDWACKER";
+    src: url("font/BERNARDWACKER.otf") format("opentype");
+    font-weight: normal;
+    font-style: normal;
+  }
+  @font-face {
+    font-family: "HOtPotato";
+    src: url("font/HotPotato.ttf") format("truetype"), url("font/HotPotato.otf") format("opentype");
+    font-weight: normal;
+    font-style: normal;
+  }  
+  @font-face {
+    font-family: "MegaSurprise";
+    src: url("font/MegaSurprise.ttf") format("truetype");
+    font-weight: normal;
+    font-style: normal;
+  }
+
+
 body{
     width: 100%;
     height: 100%;
@@ -13,7 +45,10 @@ body{
     text-align: center;
     background-color:aquamarine;
 }
-
+#titulo1{
+    font-family: 'MatSaleh', Times, serif;
+    font-size: 56px;
+}
 #nome{
     width: 50%;
     height: 35px;
@@ -30,7 +65,8 @@ body{
     --button_radius: 0.75em;
   --button_color: #e8e8e8;
   --button_outline_color: #000000;
-  font-size: 17px;
+  font-family: 'BERNARDWACKER', Times, serif;
+  font-size: 25px;
   font-weight: bold;
   border: none;
   border-radius: var(--button_radius);
@@ -40,6 +76,7 @@ body{
 .botao1{
     display: block;
   box-sizing: border-box;
+  font-family: 'BERNARDWACKER', Times, serif;
   border: 1px auto auto auto solid var(--button_outline_color);
   border-radius: var(--button_radius);
   padding: 0.75em 1.5em;
@@ -126,15 +163,17 @@ body{
 }
 
 #atacar{
-    font-weight: 40;
-    font-size: 15%;
+    font-weight: 47;
+    font-size: 82%;
+    font-family: 'HotPotato', Times, serif;
+    padding-right:38px ;
   cursor: pointer;
   position: absolute;
   text-transform: uppercase;
   height: 110%;
   width: 110%;
   background-color: #644dff;
-  color: white;
+  color: RED;
 }
 .botao2:has(#atacar:active) {
     box-shadow: none;
@@ -143,15 +182,16 @@ body{
   }
   
 #fimAventura{
-    font-weight: 40;
-    font-size: 15%;
+    font-weight: 50;
+    font-size: 40%;
+    font-family: 'BERNARDWACKER', Times, serif;
   cursor: pointer;
   position: absolute;
   text-transform: uppercase;
   height: 110%;
   width: 110%;
   background-color: #644dff;
-  color: white;
+  color: rgb(0, 0, 0);
 }
 .botao2:has(#fimAventura:active) {
     box-shadow: none;
@@ -166,17 +206,28 @@ body{
     background-color: blueviolet;
 }
 
-#parabens{
+#parabens, #texto{
     text-align: center;
-    font-size: 35px;
-    padding: 15% 0 0 0;
-    font-weight: bold
+    font-weight: bold;
+}
+
+#parabens{    
+    padding: 2% 0 0 0;
+    font-family: 'MegaSurprise', Times, serif;
+    font-size: 120px;
+    font-weight: 5;
+    color:yellow
+}
+
+#texto{
+font-size: 50px;
+font-family: 'MatSaleh', Times, serif;
 }
 
 #classificacaoFinal{
     text-align: center;
     font-size: 25px;
-    margin: 20px 0 0 0;
+    margin: 120px 0 0 0;
     font-weight: bold
 }
 
