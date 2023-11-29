@@ -120,7 +120,7 @@ body{
     width: 128px;
     height: 81px;
     background-repeat: no-repeat;
-    margin: 170px 0 25px 405px;
+    margin: 170px 0 5px 405px;
 }
 
 #nomeSuper, #vidaInimigo{
@@ -133,7 +133,7 @@ body{
     float:left
 }
 #vidaInimigo{
-    margin:5px 0 5px 335px;
+    margin:25px 0 5px 335px;
 
 }
 
@@ -141,8 +141,7 @@ body{
     position: relative;
     width: 128px;
     height: 108px;
-    background-color:coral;
-    margin: -140px 0 5px 800px;
+    margin: -113px 0 5px 800px;
     background-repeat: no-repeat;
     transform: scaleX(-1);
 }

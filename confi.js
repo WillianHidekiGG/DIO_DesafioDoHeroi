@@ -7,6 +7,7 @@ var Super = ["url(img/super_parado.gif)", "url(img/super_atacando.gif)"];
 var ataqueSuper = 1;
 var vidaSuper= 10;
 var vidaTotalSuper = 10;
+var ataqueInimigo;
 
 function confirmar(){
 var nomes = document.getElementById("nome").value;
@@ -22,6 +23,7 @@ var nomes = document.getElementById("nome").value;
     document.getElementById("vidaSuper").innerHTML = "Vida: " + vidaSuper;
     document.getElementById("super").style.backgroundImage = Super[0];
     document.getElementById("inimigo").style.backgroundImage = Inimigo[0];
+    atacarInimigo();
     }    
     
 }
@@ -31,21 +33,30 @@ function pararAtaque(){
 }
 
 
-// ataqueVilao();
-// if (vidaSuper === 0 || vidaSuper === -1) {
-//     pararAtaque();  
-//   }
+function atacarInimigo(){
+    ataqueInimigo = setInterval(function tempoAtaqueInimigo(){
+    vidaSuper--;
+    document.getElementById("vidaSuper").innerHTML = "Vida: " + vidaSuper;
+    document.getElementById("inimigo").style.backgroundImage = Inimigo[1];
+    if(vidaSuper === 0 || vidaSuper === -1){
+                 //fimAventura();
+                 pararAtaque();
+                 document.getElementById("inimigo").style.backgroundImage = Inimigo[0];
+            }
+        },1000);
+}
 
-    var ataqueInimigo = setInterval(function tempoAtaqueInimigo(){
-        vidaSuper--;
-        document.getElementById("vidaSuper").innerHTML = "Vida: " + vidaSuper;
-        document.getElementById("inimigo").style.backgroundImage = Inimigo[1];
-        if(vidaSuper === 0 || vidaSuper === -1){
-            //  fimAventura();
-             pararAtaque();
-             document.getElementById("inimigo").style.backgroundImage = Inimigo[0];
-        }
-        },1000)
+
+    // var ataqueInimigo = setInterval(function tempoAtaqueInimigo(){
+    //     vidaSuper--;
+    //     document.getElementById("vidaSuper").innerHTML = "Vida: " + vidaSuper;
+    //     document.getElementById("inimigo").style.backgroundImage = Inimigo[1];
+    //     if(vidaSuper === 0 || vidaSuper === -1){
+    //         //  fimAventura();
+    //          pararAtaque();
+    //          document.getElementById("inimigo").style.backgroundImage = Inimigo[0];
+    //     }
+    //     },1000)
 
 
 
@@ -54,7 +65,7 @@ function atacar(){
     document.getElementById("vidaInimigo").innerHTML = vidaInimigo;
     vidaInimigo = vidaInimigo - ataqueSuper;
     document.getElementById("super").style.backgroundImage = Super[1];
-    if (vidaInimigo === 0 || vidaInimigo === -1){
+    if ( vidaInimigo === -1){
         document.getElementById("inimigo").style.display = "none";
         document.getElementById("vidaInimigo").innerHTML = "";
         pontuacao = pontuacao+1000;
