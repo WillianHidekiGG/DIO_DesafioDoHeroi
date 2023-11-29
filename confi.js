@@ -1,7 +1,12 @@
 var pontuacao = 0;
 var classificacoes = ["FERRO","BRONZE", "PRATA", "OURO", "PLATINA", "ASCENDENTAL", "INMORTAL", "RADIANTE"]
-var vidaVilao = 5;
-var totalVidaVilao = 5;
+var vidaInimigo = 5;
+var totalVidaInimigo = 5;
+var Inimigo = ["url(img/inimigo_parado.gif)", "url(img/inimigo_atacando.gif)"];
+var Super = ["url(img/super_parado.gif)", "url(img/super_atacando.gif)"];
+var ataqueSuper = 1;
+var vidaSuper= 10;
+var vidaTotalSuper = 10;
 
 function confirmar(){
 var nomes = document.getElementById("nome").value;
@@ -14,22 +19,53 @@ var nomes = document.getElementById("nome").value;
     document.getElementById("nomeSuper").innerHTML = nomes;
     document.getElementById("classificacaoPontos").innerHTML = "A DIFICULDADE DA SUA AVENTURA É: "  + classificacoes[0];
     document.getElementById("pontuação").innerHTML ="EXPERIÊNCIA: " + pontuacao;
-    }
-  
+    document.getElementById("vidaSuper").innerHTML = "Vida: " + vidaSuper;
+    document.getElementById("super").style.backgroundImage = Super[0];
+    document.getElementById("inimigo").style.backgroundImage = Inimigo[0];
+    }    
+    
+}
+
+function pararAtaque(){
+            clearInterval(ataqueInimigo);        
 }
 
 
+// ataqueVilao();
+// if (vidaSuper === 0 || vidaSuper === -1) {
+//     pararAtaque();  
+//   }
+
+    var ataqueInimigo = setInterval(function tempoAtaqueInimigo(){
+        vidaSuper--;
+        document.getElementById("vidaSuper").innerHTML = "Vida: " + vidaSuper;
+        document.getElementById("inimigo").style.backgroundImage = Inimigo[1];
+        if(vidaSuper === 0 || vidaSuper === -1){
+            //  fimAventura();
+             pararAtaque();
+             document.getElementById("inimigo").style.backgroundImage = Inimigo[0];
+        }
+        },1000)
+
+
+
 function atacar(){
-    document.getElementById("vidaVilao").innerHTML = vidaVilao;
-    vidaVilao--;
-    if (vidaVilao === -1){
+    document.getElementById("vidaSuper").innerHTML = "Vida: " + vidaSuper;
+    document.getElementById("vidaInimigo").innerHTML = vidaInimigo;
+    vidaInimigo = vidaInimigo - ataqueSuper;
+    document.getElementById("super").style.backgroundImage = Super[1];
+    if (vidaInimigo === 0 || vidaInimigo === -1){
         document.getElementById("inimigo").style.display = "none";
-        document.getElementById("vidaVilao").innerHTML = "";
+        document.getElementById("vidaInimigo").innerHTML = "";
         pontuacao = pontuacao+1000;
-        totalVidaVilao = totalVidaVilao+10;
-        vidaVilao = totalVidaVilao;
+        totalVidaInimigo = totalVidaInimigo+10;
+        vidaInimigo = totalVidaInimigo;
         document.getElementById("pontuação").innerHTML ="EXPERIÊNCIA: " + pontuacao;
-    }else if(vidaVilao === vidaVilao){
+        vidaTotalSuper = vidaSuper + 20;
+        vidaSuper = vidaTotalSuper;      
+        document.getElementById("super").style.backgroundImage = Super[0];
+        pararAtaque();
+    }else if(vidaInimigo === vidaInimigo){
         document.getElementById("inimigo").style.display = "block";
     }
 
@@ -39,6 +75,7 @@ function atacar(){
            }else if(pontuacao <= 2000){
                document.getElementById("classificacaoPontos").innerHTML = "A DIFICULDADE DA SUA AVENTURA É: "  + classificacoes[1];
                document.getElementById("pontuação").innerHTML = "EXPERIÊNCIA: " + pontuacao;
+               ataqueSuper = 2;
            }else if(pontuacao <= 5000){
                document.getElementById("classificacaoPontos").innerHTML = "A DIFICULDADE DA SUA AVENTURA É: "  + classificacoes[2];
                document.getElementById("pontuação").innerHTML = "EXPERIÊNCIA: " + pontuacao;
@@ -60,10 +97,14 @@ function atacar(){
            }else{
                document.getElementById("classificacaoPontos").innerHTML = "A DIFICULDADE DA SUA AVENTURA É: "  + classificacoes[0];
                document.getElementById("pontuação").innerHTML = "EXPERIÊNCIA: " + pontuacao;
-           }
+           }       
 }
 
-
+// var superInativo = setInterval (function(){
+// if(document.onclick == null && document.getElementById("super").style.backgroundImage == Super[1]){
+//     document.getElementById("super").style.backgroundImage = Super[0]
+// }
+// },3000)
 
 function fimAventura(){
     var nomes = document.getElementById("nome").value;

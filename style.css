@@ -110,14 +110,20 @@ body{
     font-size: 26px;
 }
 
-#super{
-    width: 128px;
-    height: 128px;
-    background-color: darkgoldenrod;
-    margin: 190px 0 5px 405px;
+#vidaSuper{
+    width: 128px; 
+    margin: 150px 0 -150px 405px;
+    text-align: center;
 }
 
-#nomeSuper, #vidaVilao{
+#super{
+    width: 128px;
+    height: 81px;
+    background-repeat: no-repeat;
+    margin: 170px 0 25px 405px;
+}
+
+#nomeSuper, #vidaInimigo{
     width: 128px;
     display: inline;
     text-align: center;
@@ -126,7 +132,7 @@ body{
     margin:5px 0 5px 400px;
     float:left
 }
-#vidaVilao{
+#vidaInimigo{
     margin:5px 0 5px 335px;
 
 }
@@ -134,9 +140,11 @@ body{
 #inimigo{
     position: relative;
     width: 128px;
-    height: 128px;
+    height: 108px;
     background-color:coral;
     margin: -140px 0 5px 800px;
+    background-repeat: no-repeat;
+    transform: scaleX(-1);
 }
 
 #container5{
