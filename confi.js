@@ -7,7 +7,10 @@ var Super = ["url(img/super_parado.gif)", "url(img/super_atacando.gif)"];
 var ataqueSuper = 1;
 var vidaSuper= 10;
 var vidaTotalSuper = 10;
+var tempoAtaque =1000;
 var ataqueInimigo;
+var danoInimigo = 1;
+var dano = 0;
 
 function confirmar(){
 var nomes = document.getElementById("nome").value;
@@ -28,22 +31,37 @@ var nomes = document.getElementById("nome").value;
     
 }
 
-function pararAtaque(){
-            clearInterval(ataqueInimigo);        
-}
-
-
-function atacarInimigo(){
+function tempoAtaqueInimigo(){
     ataqueInimigo = setInterval(function tempoAtaqueInimigo(){
-    vidaSuper--;
+    vidaSuper = vidaSuper - danoInimigo;
     document.getElementById("vidaSuper").innerHTML = "Vida: " + vidaSuper;
     document.getElementById("inimigo").style.backgroundImage = Inimigo[1];
-    if(vidaSuper === 0 || vidaSuper === -1){
-                 //fimAventura();
-                 pararAtaque();
-                 document.getElementById("inimigo").style.backgroundImage = Inimigo[0];
-            }
-        },1000);
+    morteSuper();
+    if(document.getElementById("inimigo").style.display = "none"){
+        document.getElementById("inimigo").style.display = "block";
+       morteSuper();
+    }else if (vidaInimigo === -1 && document.getElementById("inimigo").style.display == "none"){
+        pararAtaque();
+       }
+        },tempoAtaque);
+}
+
+function pararAtaque(){
+            clearInterval(ataqueInimigo);      
+}
+
+function morteSuper(){
+    if( vidaSuper <= 0){
+        //fimAventura();
+        document.getElementById("inimigo").style.backgroundImage = Inimigo[0];
+        document.getElementById("vidaSuper").innerHTML = "Vida: 0";
+        pararAtaque();
+   }
+}
+
+function atacarInimigo(){
+    tempoAtaqueInimigo();
+
 }
 
 
@@ -59,25 +77,26 @@ function atacarInimigo(){
     //     },1000)
 
 
+function matarInimigo(){
+    document.getElementById("inimigo").style.display = "none";
+    document.getElementById("vidaInimigo").innerHTML = "";
+    pontuacao = pontuacao+1000;
+    totalVidaInimigo = totalVidaInimigo+10;
+    vidaInimigo = totalVidaInimigo;
+    document.getElementById("pontuação").innerHTML ="EXPERIÊNCIA: " + pontuacao;
+    vidaTotalSuper = vidaSuper + 20;
+    vidaSuper = vidaTotalSuper;      
+    document.getElementById("super").style.backgroundImage = Super[0];
+}
 
 function atacar(){
     document.getElementById("vidaSuper").innerHTML = "Vida: " + vidaSuper;
     document.getElementById("vidaInimigo").innerHTML = vidaInimigo;
     vidaInimigo = vidaInimigo - ataqueSuper;
     document.getElementById("super").style.backgroundImage = Super[1];
-    if ( vidaInimigo === -1){
-        document.getElementById("inimigo").style.display = "none";
-        document.getElementById("vidaInimigo").innerHTML = "";
-        pontuacao = pontuacao+1000;
-        totalVidaInimigo = totalVidaInimigo+10;
-        vidaInimigo = totalVidaInimigo;
-        document.getElementById("pontuação").innerHTML ="EXPERIÊNCIA: " + pontuacao;
-        vidaTotalSuper = vidaSuper + 20;
-        vidaSuper = vidaTotalSuper;      
-        document.getElementById("super").style.backgroundImage = Super[0];
-        pararAtaque();
-    }else if(vidaInimigo === vidaInimigo){
-        document.getElementById("inimigo").style.display = "block";
+    if ( vidaInimigo <= -1){
+        matarInimigo();
+        
     }
 
     if(pontuacao <= 1000){
@@ -90,21 +109,27 @@ function atacar(){
            }else if(pontuacao <= 5000){
                document.getElementById("classificacaoPontos").innerHTML = "A DIFICULDADE DA SUA AVENTURA É: "  + classificacoes[2];
                document.getElementById("pontuação").innerHTML = "EXPERIÊNCIA: " + pontuacao;
+               danoInimigo = 3;
            }else if(pontuacao <= 7000){
                document.getElementById("classificacaoPontos").innerHTML = "A DIFICULDADE DA SUA AVENTURA É: "  + classificacoes[3];
                document.getElementById("pontuação").innerHTML = "EXPERIÊNCIA: " + pontuacao;
+               ataqueSuper = 3;
+               danoInimigo = 5;
            }else if(pontuacao <= 8000){
                document.getElementById("classificacaoPontos").innerHTML = "A DIFICULDADE DA SUA AVENTURA É: "  + classificacoes[4];
                document.getElementById("pontuação").innerHTML = "EXPERIÊNCIA: " + pontuacao;
            }else if(pontuacao <= 9000){
                document.getElementById("classificacaoPontos").innerHTML = "A DIFICULDADE DA SUA AVENTURA É: "  + classificacoes[5];
                document.getElementById("pontuação").innerHTML = "EXPERIÊNCIA: " + pontuacao;
+               ataqueSuper = 4;
            }else if(pontuacao <= 10000){
                document.getElementById("classificacaoPontos").innerHTML = "A DIFICULDADE DA SUA AVENTURA É: "  + classificacoes[6];
                document.getElementById("pontuação").innerHTML = "EXPERIÊNCIA: " + pontuacao;
+               danoInimigo = 0;
            }else if(pontuacao >= 10001){
                document.getElementById("classificacaoPontos").innerHTML = "A DIFICULDADE DA SUA AVENTURA É: "  + classificacoes[7];
                document.getElementById("pontuação").innerHTML = "EXPERIÊNCIA: " + pontuacao;
+               ataqueSuper = 10;
            }else{
                document.getElementById("classificacaoPontos").innerHTML = "A DIFICULDADE DA SUA AVENTURA É: "  + classificacoes[0];
                document.getElementById("pontuação").innerHTML = "EXPERIÊNCIA: " + pontuacao;
