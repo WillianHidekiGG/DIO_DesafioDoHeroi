@@ -6,7 +6,10 @@
     <link rel="stylesheet" href="style.css">
     <script src="confi.js"></script>
     <title>Herói</title>
-    
+    <audio id="musicaFundo" autoplay>
+       <source src="music/musica_principal2.mp3" type="audio/mpeg"> 
+       <source src="music/musica_principal2.ogg" type="audio/ogg">
+    </audio>
 </head>
 <body>
 
@@ -17,23 +20,25 @@
         <input type="text" name="nome" id="nome" placeholder="Digite o nome da AVENTUREIRA ou do AVENTUREIRO"/>
         <button id="confirmar" onclick="confirmar()"><span class="botao1">CONFIRMAR</span> </button>
     </div>
-
+    
     <div id="conteiner2">
+        <div id="cenario"></div>
         <h1 id="classificacaoPontos"></h1>
         <p id="pontuação"></p>             
         
-        <div class="container 3">
+        <div class="conteiner3">
             <div id="vidaSuper"></div>
+            <div id="vidaInimigo"></div>
              <div id="super"></div>
              <div id="inimigo"></div>
 
     </div>
             <div id="container4">
                 <p id="nomeSuper"></p>
-                <div id="vidaInimigo"></div>
+                <p id="nomeInimigo"></p>
                 
             </div>
-            <div id="container5">
+            <div id="conteiner5">
             <div class="botao2">
                 <button id="atacar" onclick="atacar()">ATACAR</button>
             </div>
@@ -43,7 +48,7 @@
                 
             </div>
     </div>
-    <div id="container6">
+    <div id="conteiner6">
         <div id="parabens"></div>
         <div id="texto"></div>
         <div id="classificacaoFinal"></div>
