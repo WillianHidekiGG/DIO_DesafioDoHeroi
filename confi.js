@@ -18,7 +18,7 @@ var inimigoNome = ["Rato Ladrão", "Mago Maligno", "troll", "Mecanoide do desert
 
 var Super = ["url(img/super/super_parado.gif)", "url(img/super/super_atacando.gif)"];
 
-var fundo = ["url(img/cenario/cenarioFloresta.jpg)", "url(img/cenario/cenarioDeserto.jpg)", "url(img/cenario/cenarioLava.gif)", "url(img/cenario/cenarioMorte.jpg)", "url(img/cenario/cenarioChefão.jpg)"];
+var fundo = ["url(img/cenario/cenarioFloresta.jpg)", "url(img/cenario/cenarioDeserto.jpg)", "url(img/cenario/cenarioLava.gif)", "url(img/cenario/cenarioMorte.jpg)", "url(img/cenario/cenarioChefão.jpg)", "url(img/cenario/game_over/cemiterio.gif)"];
 var ataqueSuper = 1;
 var vidaSuper= 10;
 var vidaTotalSuper = 10;
@@ -286,7 +286,7 @@ function pararAtaque(){
 
 function morteSuper(){
     if( vidaSuper <= 0){
-       //fimAventura();
+        gameOver();
         inimigosParados();
         document.getElementById("vidaSuper").innerHTML = "Vida: 0";
         pararAtaque();
@@ -414,11 +414,15 @@ function classificacoesFinais(){
  function gameOver(){
     var nomes = document.getElementById("nome").value;
     document.getElementById("conteiner2").style.display = "none";
-    document.getElementById("conteiner6").style.display = "block";
+    document.getElementById("conteiner7").style.display = "block";
+    document.getElementById("cenarioGameOver").style.backgroundImage = fundo[5];
+    document.getElementById("cenarioGameOver").style.zIndex= "-2";
+    document.getElementById("cenarioGameOver").style.backgroundSize = "100vw 100vh"
+    document.getElementById("cenarioGameOver").style.backgroundRepeat = "no-repeat";
     document.getElementById("gameOver").innerHTML = "GAME OVER";
-    document.getElementById("texto").innerHTML = "R.I.P " + nomes; 
-    document.getElementById("classificacaoFinal").innerHTML = "A DIFICULDADE DA SUA AVENTURA É: "  + classificacoes[0];
-    document.getElementById("pontosFinais").innerHTML ="EXPERIÊNCIA: " + pontuacao;
+    document.getElementById("textoGameOver").innerHTML = "R.I.P " + nomes; 
+    document.getElementById("classificacaoFinalGameOver").innerHTML = "A DIFICULDADE DA SUA AVENTURA É: "  + classificacoes[0];
+    document.getElementById("pontosFinaisGameOver").innerHTML ="EXPERIÊNCIA: " + pontuacao;
  }
 
 function fimAventura(){

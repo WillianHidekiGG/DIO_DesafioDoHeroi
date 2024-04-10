@@ -299,3 +299,36 @@ font-family: 'MatSaleh', Times, serif;
     height: 97vh;
     width: 99vw;
 }
+
+#cenarioGameOver{
+    width:100%;
+    height: 105%;
+    margin-top: -20px;
+    position: absolute;
+}
+
+#lapide{
+    width:65%;
+    height: 55%;
+    background-image: url("img/cenario/game_over/lapide.png");
+    z-index: -1;
+}
+
+#textoGameOver{
+    font-size: 50px;
+    font-family: 'MatSaleh', Times, serif;
+}
+
+#classificacaoFinalGameOver{
+        text-align: center;
+        font-size: 25px;
+        margin: 120px 0 0 0;
+        font-weight: bold
+}
+
+#pontosFinaisGameOver{
+        text-align: center;
+        font-size: 25px;
+        margin: 5px 0 0 0;
+        font-weight: bold
+}
