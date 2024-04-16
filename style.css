@@ -307,28 +307,54 @@ font-family: 'MatSaleh', Times, serif;
     position: absolute;
 }
 
+#gameOver
+{
+    margin: -2% 0 -4% 15%;
+    font-family: 'MegaSurprise', Times, serif;
+    font-size: 130px;
+    font-weight: 5;
+    color:yellow
+}
+
 #lapide{
-    width:65%;
-    height: 55%;
+    position: relative;
+    width:110%;
+    height: 85%;
+    margin: 0 0 0 -15% ;
     background-image: url("img/cenario/game_over/lapide.png");
     z-index: -1;
 }
 
-#textoGameOver{
-    font-size: 50px;
+#rip{
+    position: absolute;
+    margin: -30% 0 0 42%;
+    font-size: 100px;
     font-family: 'MatSaleh', Times, serif;
 }
 
+#nomeGameOver{
+    position: absolute;
+    width: 35%;
+    margin: -23.5% 0 0 32%;
+    font-size: 65px;
+    font-family: 'MatSaleh', Times, serif;
+    text-align: center;
+}
+
 #classificacaoFinalGameOver{
-        text-align: center;
-        font-size: 25px;
-        margin: 120px 0 0 0;
-        font-weight: bold
+    position: absolute;
+    width: 47%;
+    font-size: 25px;
+    margin: -19% 0 0 27%;
+    text-align: center;
+    font-weight: bold
 }
 
 #pontosFinaisGameOver{
-        text-align: center;
-        font-size: 25px;
-        margin: 5px 0 0 0;
-        font-weight: bold
+    position: absolute;
+    width: 39%;
+    font-size: 25px;
+    margin: -16% 0 0 30%;
+    text-align: center;
+    font-weight: bold
 }

@@ -26,6 +26,7 @@ var tempoAtaque = 1000;
 var ataqueInimigo;
 var danoInimigo = 1;
 var dano = 0;
+let classificacaoFinal = classificacoesFinais();
 var somFundo = document.createElement("musicaFundo");
 
 function cenarioMuda(){
@@ -382,9 +383,12 @@ function atacar(){
 }
 
 function classificacoesFinais(){
-    if(pontuacao <= 1000){
+    if(pontuacao >= 0){
         document.getElementById("classificacaoFinal").innerHTML = "A DIFICULDADE DA SUA AVENTURA É: "  + classificacoes[0];
         document.getElementById("pontosFinais").innerHTML ="EXPERIÊNCIA: " + pontuacao;
+        }else if(pontuacao <= 1000){
+            document.getElementById("classificacaoFinal").innerHTML = "A DIFICULDADE DA SUA AVENTURA É: "  + classificacoes[0];
+            document.getElementById("pontosFinais").innerHTML ="EXPERIÊNCIA: " + pontuacao;
            }else if(pontuacao <= 2000){
                document.getElementById("classificacaoFinal").innerHTML = "A DIFICULDADE DA SUA AVENTURA É: "  + classificacoes[1];
                document.getElementById("pontosFinais").innerHTML = "SCORE: " + pontuacao;
@@ -417,13 +421,16 @@ function classificacoesFinais(){
     document.getElementById("conteiner7").style.display = "block";
     document.getElementById("cenarioGameOver").style.backgroundImage = fundo[5];
     document.getElementById("cenarioGameOver").style.zIndex= "-2";
-    document.getElementById("cenarioGameOver").style.backgroundSize = "100vw 100vh"
+    document.getElementById("cenarioGameOver").style.backgroundSize = "100vw 105vh"
     document.getElementById("cenarioGameOver").style.backgroundRepeat = "no-repeat";
     document.getElementById("gameOver").innerHTML = "GAME OVER";
-    document.getElementById("textoGameOver").innerHTML = "R.I.P " + nomes; 
-    document.getElementById("classificacaoFinalGameOver").innerHTML = "A DIFICULDADE DA SUA AVENTURA É: "  + classificacoes[0];
+    document.getElementById("lapide").style.backgroundSize = "128vw 88vh"
+    document.getElementById("rip").innerHTML = "R.I.P"; 
+    document.getElementById("nomeGameOver").innerHTML = nomes; 
+    document.getElementById("classificacaoFinalGameOver").innerHTML = "A DIFICULDADE DA SUA AVENTURA FOI: "+ classificacoes[0];
     document.getElementById("pontosFinaisGameOver").innerHTML ="EXPERIÊNCIA: " + pontuacao;
- }
+    classificacoesFinais();
+}
 
 function fimAventura(){
     var nomes = document.getElementById("nome").value;
@@ -431,7 +438,7 @@ function fimAventura(){
     document.getElementById("conteiner6").style.display = "block";
     document.getElementById("parabens").innerHTML = "PARABENS !";
     document.getElementById("texto").innerHTML = "PELA SUA AVENTURA " + nomes; 
-    document.getElementById("classificacaoFinal").innerHTML = "A DIFICULDADE DA SUA AVENTURA É: "  + classificacoes[0];
+    document.getElementById("classificacaoFinal").innerHTML = "A DIFICULDADE DA SUA AVENTURA FOI: "  + classificacoes[0];
     document.getElementById("pontosFinais").innerHTML ="EXPERIÊNCIA: " + pontuacao;
     classificacoesFinais();
           
