@@ -26,7 +26,7 @@ var tempoAtaque = 1000;
 var ataqueInimigo;
 var danoInimigo = 1;
 var dano = 0;
-let classificacaoFinal = classificacoesFinais();
+// let classificacaoFinal = classificacoesFinais();
 var somFundo = document.createElement("musicaFundo");
 
 function cenarioMuda(){
@@ -103,6 +103,7 @@ function confirmar(){
     atacar();
     };
 });
+
 
 window.addEventListener('keyup', function(e) {
     var codigoTecla = e.which || e.keyCode || 0;
@@ -317,7 +318,35 @@ function matarInimigo(){
     document.getElementById("super").style.margin = "270px 0 5px 405px"
 }
 
+function pontuacaoDificuldade(){
+    var pontuacaoDificuldadeFinal = classificacoes.at();
+    if(pontuacao <= 1000){
+        document.getElementById("classificacaoFinalGameOver").innerHTML = "A DIFICULDADE DA SUA AVENTURA FOI: " + classificacoes.at(0);
+        document.getElementById("pontosFinaisGameOver").innerHTML ="EXPERIÊNCIA: " + pontuacao;        
+    }else if(pontuacao <= 2000){
+        document.getElementById("classificacaoFinalGameOver").innerHTML = "A DIFICULDADE DA SUA AVENTURA FOI: " + classificacoes.at(1);
+        document.getElementById("pontosFinaisGameOver").innerHTML ="EXPERIÊNCIA: " + pontuacao;
+    }else if(pontuacao <= 5000){
+        document.getElementById("classificacaoFinalGameOver").innerHTML = "A DIFICULDADE DA SUA AVENTURA FOI: " + classificacoes.at(2);
+        document.getElementById("pontosFinaisGameOver").innerHTML ="EXPERIÊNCIA: " + pontuacao;
+    }else if(pontuacao <= 7000){
+        document.getElementById("classificacaoFinalGameOver").innerHTML = "A DIFICULDADE DA SUA AVENTURA FOI: " + classificacoes.at(3);
+        document.getElementById("pontosFinaisGameOver").innerHTML ="EXPERIÊNCIA: " + pontuacao;
+    }else if(pontuacao <= 8000){
+        document.getElementById("classificacaoFinalGameOver").innerHTML = "A DIFICULDADE DA SUA AVENTURA FOI: " + classificacoes.at(4);
+        document.getElementById("pontosFinaisGameOver").innerHTML ="EXPERIÊNCIA: " + pontuacao;
+    }else if(pontuacao <= 9000){
+        document.getElementById("classificacaoFinalGameOver").innerHTML = "A DIFICULDADE DA SUA AVENTURA FOI: " + classificacoes.at(5);
+        document.getElementById("pontosFinaisGameOver").innerHTML ="EXPERIÊNCIA: " + pontuacao;
+    }else if(pontuacao <= 10000){
+        document.getElementById("classificacaoFinalGameOver").innerHTML = "A DIFICULDADE DA SUA AVENTURA FOI: " + classificacoes.at(7);
+        document.getElementById("pontosFinaisGameOver").innerHTML ="EXPERIÊNCIA: " + pontuacao;
+    }else if(pontuacao >= 10001){
+        document.getElementById("classificacaoFinalGameOver").innerHTML = "A DIFICULDADE DA SUA AVENTURA FOI: " + classificacoes.at(7);
+        document.getElementById("pontosFinaisGameOver").innerHTML ="EXPERIÊNCIA: " + pontuacao;
+    }               
 
+}
 
 function atacar(){
     document.getElementById("vidaSuper").innerHTML = "Vida: " + vidaSuper;
@@ -370,12 +399,13 @@ function atacar(){
                document.getElementById("classificacaoPontos").innerHTML = "A DIFICULDADE DA SUA AVENTURA É: "  + classificacoes[7];
                document.getElementById("pontuação").innerHTML = "EXPERIÊNCIA: " + pontuacao;
                danoInimigo = 6;
-               document.getElementById("vidaInimigo").style.margin = "380px 0 -235px 0px"
+               document.getElementById("inimigo").style.margin = "380px 0px -235px 0px"
+               document.getElementById("vidaInimigo").style.margin = "380px 0px -235px 0px"
            }else if(pontuacao >= 10001){
                document.getElementById("classificacaoPontos").innerHTML = "A DIFICULDADE DA SUA AVENTURA É: "  + classificacoes[7];
                document.getElementById("pontuação").innerHTML = "EXPERIÊNCIA: " + pontuacao;
                ataqueSuper = 10;
-               document.getElementById("vidaInimigo").style.margin = "365px 0 -505px 0px"
+               document.getElementById("vidaInimigo").style.margin = "365px 0 -405px 0px"
            }else{
                document.getElementById("classificacaoPontos").innerHTML = "A DIFICULDADE DA SUA AVENTURA É: "  + classificacoes[6];
                document.getElementById("pontuação").innerHTML = "EXPERIÊNCIA: " + pontuacao;
@@ -383,37 +413,35 @@ function atacar(){
 }
 
 function classificacoesFinais(){
-    if(pontuacao >= 0){
-        document.getElementById("classificacaoFinal").innerHTML = "A DIFICULDADE DA SUA AVENTURA É: "  + classificacoes[0];
-        document.getElementById("pontosFinais").innerHTML ="EXPERIÊNCIA: " + pontuacao;
-        }else if(pontuacao <= 1000){
+        if(pontuacao <= 1000){
             document.getElementById("classificacaoFinal").innerHTML = "A DIFICULDADE DA SUA AVENTURA É: "  + classificacoes[0];
             document.getElementById("pontosFinais").innerHTML ="EXPERIÊNCIA: " + pontuacao;
            }else if(pontuacao <= 2000){
                document.getElementById("classificacaoFinal").innerHTML = "A DIFICULDADE DA SUA AVENTURA É: "  + classificacoes[1];
-               document.getElementById("pontosFinais").innerHTML = "SCORE: " + pontuacao;
+               document.getElementById("pontosFinais").innerHTML ="EXPERIÊNCIA: " + pontuacao;
            }else if(pontuacao <= 5000){
                document.getElementById("classificacaoFinal").innerHTML = "A DIFICULDADE DA SUA AVENTURA É: "  + classificacoes[2];
-               document.getElementById("pontosFinais").innerHTML = "EXPERIÊNCIA: " + pontuacao;
+               document.getElementById("pontosFinais").innerHTML ="EXPERIÊNCIA: " + pontuacao;
            }else if(pontuacao <= 7000){
                document.getElementById("classificacaoFinal").innerHTML = "A DIFICULDADE DA SUA AVENTURA É: "  + classificacoes[3];
-               document.getElementById("pontosFinais").innerHTML = "EXPERIÊNCIA: " + pontuacao;
+               document.getElementById("pontosFinais").innerHTML ="EXPERIÊNCIA: " + pontuacao;
            }else if(pontuacao <= 8000){
                document.getElementById("classificacaoFinal").innerHTML = "A DIFICULDADE DA SUA AVENTURA É: "  + classificacoes[4];
-               document.getElementById("pontosFinais").innerHTML = "EXPERIÊNCIA: " + pontuacao;
+               document.getElementById("pontosFinais").innerHTML ="EXPERIÊNCIA: " + pontuacao;
            }else if(pontuacao <= 9000){
                document.getElementById("classificacaoFinal").innerHTML = "A DIFICULDADE DA SUA AVENTURA É: "  + classificacoes[5];
-               document.getElementById("pontosFinais").innerHTML = "EXPERIÊNCIA: " + pontuacao;
+               document.getElementById("pontosFinais").innerHTML ="EXPERIÊNCIA: " + pontuacao;
            }else if(pontuacao <= 10000){
                document.getElementById("classificacaoFinal").innerHTML = "A DIFICULDADE DA SUA AVENTURA É: "  + classificacoes[6];
-               document.getElementById("pontosFinais").innerHTML = "EXPERIÊNCIA: " + pontuacao;
+               document.getElementById("pontosFinais").innerHTML ="EXPERIÊNCIA: " + pontuacao;
            }else if(pontuacao >= 10001){
                document.getElementById("classificacaoFinal").innerHTML = "A DIFICULDADE DA SUA AVENTURA É: "  + classificacoes[7];
-               document.getElementById("pontosFinais").innerHTML = "EXPERIÊNCIA: " + pontuacao;
+               document.getElementById("pontosFinais").innerHTML ="EXPERIÊNCIA: " + pontuacao;
            }else{
                document.getElementById("classificacaoFinal").innerHTML = "A DIFICULDADE DA SUA AVENTURA É: "  + classificacoes[0];
-               document.getElementById("pontosFinais").innerHTML = "EXPERIÊNCIA: " + pontuacao;
+               document.getElementById("pontosFinais").innerHTML ="EXPERIÊNCIA: " + pontuacao;
            }
+        
 }
  function gameOver(){
     var nomes = document.getElementById("nome").value;
@@ -421,15 +449,13 @@ function classificacoesFinais(){
     document.getElementById("conteiner7").style.display = "block";
     document.getElementById("cenarioGameOver").style.backgroundImage = fundo[5];
     document.getElementById("cenarioGameOver").style.zIndex= "-2";
-    document.getElementById("cenarioGameOver").style.backgroundSize = "100vw 105vh"
+    document.getElementById("cenarioGameOver").style.backgroundSize = "100vw 100vh"
     document.getElementById("cenarioGameOver").style.backgroundRepeat = "no-repeat";
     document.getElementById("gameOver").innerHTML = "GAME OVER";
-    document.getElementById("lapide").style.backgroundSize = "128vw 88vh"
+    document.getElementById("lapide").style.backgroundSize = "128vw 90vh"
     document.getElementById("rip").innerHTML = "R.I.P"; 
     document.getElementById("nomeGameOver").innerHTML = nomes; 
-    document.getElementById("classificacaoFinalGameOver").innerHTML = "A DIFICULDADE DA SUA AVENTURA FOI: "+ classificacoes[0];
-    document.getElementById("pontosFinaisGameOver").innerHTML ="EXPERIÊNCIA: " + pontuacao;
-    classificacoesFinais();
+    pontuacaoDificuldade();
 }
 
 function fimAventura(){
@@ -438,8 +464,6 @@ function fimAventura(){
     document.getElementById("conteiner6").style.display = "block";
     document.getElementById("parabens").innerHTML = "PARABENS !";
     document.getElementById("texto").innerHTML = "PELA SUA AVENTURA " + nomes; 
-    document.getElementById("classificacaoFinal").innerHTML = "A DIFICULDADE DA SUA AVENTURA FOI: "  + classificacoes[0];
-    document.getElementById("pontosFinais").innerHTML ="EXPERIÊNCIA: " + pontuacao;
     classificacoesFinais();
           
 }

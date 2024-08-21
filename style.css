@@ -28,6 +28,12 @@
     font-weight: normal;
     font-style: normal;
   }
+  @font-face {
+    font-family: "Pixeled";
+    src: url("font/Pixeled.ttf") format("truetype");
+    font-weight: normal;
+    font-style: normal;
+  }
 
 
 body{
@@ -276,7 +282,8 @@ font-family: 'MatSaleh', Times, serif;
 }
 
 #recarregar{
-    margin: 10% 0 0 40%;
+    position: absolute;
+    margin: 35% 0 0 40%;
     --button_radius: 0.75em;
   --button_color: #e8e8e8;
   --button_outline_color: #000000;
@@ -296,65 +303,78 @@ font-family: 'MatSaleh', Times, serif;
 
 #conteiner7{
     display: none;
-    height: 97vh;
+    height: 95vh;
     width: 99vw;
 }
 
 #cenarioGameOver{
     width:100%;
-    height: 105%;
+    height: 100%;
     margin-top: -20px;
     position: absolute;
 }
 
 #gameOver
 {
-    margin: -2% 0 -4% 15%;
+    position: absolute;
+    margin: -2% 0 0 15%;
     font-family: 'MegaSurprise', Times, serif;
     font-size: 130px;
     font-weight: 5;
-    color:yellow
+    color: rgb(0, 0, 0);
+    background-image: linear-gradient(0deg, rgb(83, 83, 83), rgb(0, 0, 0));
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    filter: drop-shadow(5px 5px #000000);
 }
 
 #lapide{
-    position: relative;
+    position: absolute;
     width:110%;
     height: 85%;
-    margin: 0 0 0 -15% ;
+    margin: 5% 0 0 -15% ;
     background-image: url("img/cenario/game_over/lapide.png");
     z-index: -1;
 }
 
 #rip{
     position: absolute;
-    margin: -30% 0 0 42%;
+    margin: 13% 0 0 42%;
     font-size: 100px;
     font-family: 'MatSaleh', Times, serif;
+    color: rgb(43, 43, 43);
+    filter: drop-shadow(3px 1px 0px rgb(212, 220, 255));
 }
 
 #nomeGameOver{
     position: absolute;
     width: 35%;
-    margin: -23.5% 0 0 32%;
+    margin: 19% 0 0 32%;
     font-size: 65px;
     font-family: 'MatSaleh', Times, serif;
     text-align: center;
+    color: rgb(43, 43, 43);
+    filter: drop-shadow(3px 1px 0px rgb(212, 220, 255));
 }
 
 #classificacaoFinalGameOver{
     position: absolute;
     width: 47%;
     font-size: 25px;
-    margin: -19% 0 0 27%;
+    margin: 24% 0 0 27%;
     text-align: center;
-    font-weight: bold
+    font-weight: bold;
+    color: rgb(43, 43, 43);
+    filter: drop-shadow(3px 1px 0px rgb(212, 220, 255));
 }
 
 #pontosFinaisGameOver{
     position: absolute;
     width: 39%;
     font-size: 25px;
-    margin: -16% 0 0 30%;
+    margin: 30% 15px 0px 30%;
     text-align: center;
-    font-weight: bold
+    font-weight: bold;
+    color: rgb(43, 43, 43);
+    filter: drop-shadow(3px 1px 0px rgb(212, 220, 255));
 }
