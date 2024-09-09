@@ -2,6 +2,7 @@ var pontuacao = 0;
 var classificacoes = ["FERRO","BRONZE", "PRATA", "OURO", "PLATINA", "ASCENDENTAL", "INMORTAL", "RADIANTE"]
 var vidaInimigo = 5;
 var totalVidaInimigo = 5;
+var vidaInimigoImg = "url(img/inimigos/vida_vaziaInimigo.png)"
 var InimigoParado = ["url(img/inimigos/inimigo_ratoParado.gif)",
 "url(img/inimigos/inimigo_magoParado.gif)", "url(img/inimigos/inimigo_trollParado.gif)",
 "url(img/inimigos/inimigo_sombraParado.gif)", "url(img/inimigos/inimigo_lavaParado.gif)", 
@@ -15,9 +16,8 @@ var InimigoAtacando = ["url(img/inimigos/inimigo_ratoAtacando.gif)",
 ];
 
 var inimigoNome = ["Rato Ladrão", "Mago Maligno", "troll", "Mecanoide do deserto", "Cavaleiro do inferno", "Ajudante da Morte", "Chefão Souman"]
-
+var vidaImg = "url(img/super/vida_vazia.png)";
 var Super = ["url(img/super/super_parado.gif)", "url(img/super/super_atacando.gif)"];
-
 var fundo = ["url(img/cenario/cenarioFloresta.jpg)", "url(img/cenario/cenarioDeserto.jpg)", "url(img/cenario/cenarioLava.gif)", "url(img/cenario/cenarioMorte.jpg)", "url(img/cenario/cenarioChefão.jpg)", "url(img/cenario/game_over/cemiterio.gif)"];
 var ataqueSuper = 1;
 var vidaSuper= 10;
@@ -80,7 +80,11 @@ function confirmar(){
         document.getElementById("classificacaoPontos").innerHTML = "A DIFICULDADE DA SUA AVENTURA É: "  + classificacoes[0];
         document.getElementById("pontuação").innerHTML ="EXPERIÊNCIA: " + pontuacao;
         document.getElementById("vidaSuper").innerHTML = "Vida: " + vidaSuper;
-        document.getElementById("vidaSuper").style.margin = "40px 0 370px 405px"
+        document.getElementById("vidaSuper").style.margin = "243px 0 165px 409px";
+        document.getElementById("vidaSuper").style.backgroundColor = "red";
+        document.getElementById("vidaSuperImg").style.backgroundImage = vidaImg;
+        document.getElementById("vidaSuperImg").style.zIndex= "-1";
+        document.getElementById("vidaSuperImg").style.margin = "-200px 0 47px 360px";
         document.getElementById("super").style.backgroundImage = Super[0];
         document.getElementById("super").style.margin = "270px 0 5px 405px"
         document.getElementById("cenario").style.backgroundImage = cenarioMuda();
@@ -92,17 +96,20 @@ function confirmar(){
                 window.location.reload();
                                         };
                 });
-        }    
+
+                window.addEventListener('keyup', function(e) {
+                    var codigoTecla = e.which || e.keyCode || 0;
+                    var space = codigoTecla == 32;
+                    if (space){
+                      atacar();
+                      };
+                  });
+        
+            }    
         
     }
 
-   window.addEventListener('keyup', function(e) {
-  var codigoTecla = e.which || e.keyCode || 0;
-  var space = codigoTecla == 32;
-  if (space){
-    atacar();
-    };
-});
+
 
 
 window.addEventListener('keyup', function(e) {
@@ -120,6 +127,8 @@ function inimigosParados(){
         setTimeout(() => {
             document.getElementById("inimigo").style.backgroundImage = InimigoParado[0];
             document.getElementById("nomeInimigo").innerHTML = inimigoNome[0];
+            document.getElementById("vidaInimigo").style.margin = "-40px 0 -315px 775px"
+            document.getElementById("vidaInimigoImg").style.margin = "278px 0 -230px 765px"
             document.getElementById("inimigo").style.width = "150px"
             document.getElementById("inimigo").style.height = "110px"
             document.getElementById("inimigo").style.margin = "-117px 0 3px 800px"
@@ -175,7 +184,8 @@ function inimigosAtacando(){
         document.getElementById("inimigo").style.backgroundImage = InimigoAtacando[0];
         document.getElementById("nomeInimigo").innerHTML = inimigoNome[0];
         document.getElementById("nomeInimigo").style.margin = "-30px 0 185px 785px"
-        document.getElementById("vidaInimigo").style.margin = "-140px 0 -221px 800px"
+        document.getElementById("vidaInimigo").style.margin = "-40px 0 -315px 775px"
+        document.getElementById("vidaInimigoImg").style.margin = "278px 0 -230px 765px"
         document.getElementById("inimigo").style.width = "350px"
         document.getElementById("inimigo").style.height = "130px"
         document.getElementById("inimigo").style.margin = "-137px 0 3px 650px"
@@ -184,13 +194,15 @@ function inimigosAtacando(){
         document.getElementById("nomeInimigo").innerHTML = inimigoNome[1];
         document.getElementById("inimigo").style.width = "150px"
         document.getElementById("inimigo").style.height = "100px"
-        document.getElementById("vidaInimigo").style.margin = "-140px 0 -222px 800px"
+        document.getElementById("vidaInimigo").style.margin = "-40px 0 -222px 775px"
+        document.getElementById("vidaInimigoImg").style.margin = "185px 0 -235px 765px"
         document.getElementById("inimigo").style.margin = "-105px 0 1px 790px"
        }else if(pontuacao <= 5000){
         document.getElementById("inimigo").style.backgroundImage = InimigoAtacando[2];
         document.getElementById("nomeInimigo").innerHTML = inimigoNome[2];
         document.getElementById("nomeInimigo").style.margin = "-15px 0 42px 800px"
-        document.getElementById("vidaInimigo").style.margin = "33px 0 -240px 800px"
+        document.getElementById("vidaInimigo").style.margin = "70px 0 -240px 775px"
+        document.getElementById("vidaInimigoImg").style.margin = "203px 0 -250px 765px"
         document.getElementById("inimigo").style.height = "150px"
         document.getElementById("inimigo").style.margin = "-150px 0 2px 598px"
         }else if(pontuacao <= 7000){
@@ -205,8 +217,6 @@ function inimigosAtacando(){
         }else if(pontuacao <= 8000){
             document.getElementById("inimigo").style.backgroundImage = InimigoAtacando[4];
             document.getElementById("nomeInimigo").innerHTML = inimigoNome[4];
-            document.getElementById("nomeInimigo").style.backgroundColor = "green";
-            document.getElementById("vidaInimigo").style.backgroundColor = "green";
             document.getElementById("vidaInimigo").style.margin = "80px 0 -180px 800px"
             document.getElementById("inimigo").style.width = "315px"
             document.getElementById("inimigo").style.transform = "none"
@@ -239,19 +249,26 @@ function inimigosAtacando(){
 
     function vidaSuperPosicao(){
         if(pontuacao <= 1000){
-            document.getElementById("vidaSuper").style.margin = "-170px 0 120px 405px"
+            document.getElementById("vidaSuper").style.margin = "-170px 0 118px 405px"
+            document.getElementById("vidaSuperImg").style.margin = "-155px 0 0px 360px";
            }else if(pontuacao <= 2000){
-            document.getElementById("vidaSuper").style.margin = "-170px 0 120px 405px"
+            document.getElementById("vidaSuper").style.margin = "-170px 0 115px 405px"
+            document.getElementById("vidaSuperImg").style.margin = "-155px 0 0px 360px";
            }else if(pontuacao <= 5000){
             document.getElementById("vidaSuper").style.margin = "-40px 0 -43px 405px"
+            document.getElementById("vidaSuperImg").style.margin = "5px 0 -101px 360px";
             }else if(pontuacao <= 7000){
                 document.getElementById("vidaSuper").style.margin = "100px 0 -135px 405px"
+                document.getElementById("vidaSuperImg").style.margin = "-155px 0 0px 360px";
             }else if(pontuacao <= 8000){
                 document.getElementById("vidaSuper").style.margin = "100px 0 -190px 405px"
+                document.getElementById("vidaSuperImg").style.margin = "-155px 0 0px 360px";
             }else if(pontuacao <= 9000){
                 document.getElementById("vidaSuper").style.margin = "120px 0 -430px 405px"
+                document.getElementById("vidaSuperImg").style.margin = "-155px 0 0px 360px";
             }else if(pontuacao <= 10000){
                 document.getElementById("vidaSuper").style.margin = "20px 0 -120px 405px"
+                document.getElementById("vidaSuperImg").style.margin = "-155px 0 0px 360px";
             }
     }
 
@@ -298,7 +315,12 @@ function morteSuper(){
 function atacarInimigo(){
     document.getElementById("inimigo").style.backgroundImage = InimigoParado[0];
     document.getElementById("nomeInimigo").innerHTML = inimigoNome[0];
-    document.getElementById("nomeInimigo").style.margin = "-30px 0 -30px 785px"
+    document.getElementById("vidaInimigo").style.margin = "-85px 0 -315px 775px"
+    document.getElementById("vidaInimigoImg").style.backgroundImage = vidaInimigoImg;
+    document.getElementById("vidaInimigoImg").style.zIndex= "-1";
+    document.getElementById("vidaInimigoImg").style.margin = "278px 0 -146px 765px"
+    document.getElementById("vidaInimigo").style.backgroundColor = "red";
+    document.getElementById("nomeInimigo").style.margin = "-30px 0 -230px 785px"
     document.getElementById("inimigo").style.height = "110px"
     document.getElementById("inimigo").style.margin = "-115px 0 3px 800px"
     tempoAtaqueInimigo();
@@ -352,8 +374,7 @@ function atacar(){
     document.getElementById("vidaSuper").innerHTML = "Vida: " + vidaSuper;
     document.getElementById("vidaInimigo").innerHTML = vidaInimigo;
     vidaInimigo = vidaInimigo - ataqueSuper;
-    document.getElementById("vidaInimigo").style.margin = "-140px 0 139px 800px"
-    document.getElementById("vidaInimigo").style.backgroundColor = "green"
+    document.getElementById("vidaInimigo").style.margin = "-180px 0 139px 800px"
     document.getElementById("super").style.backgroundImage = Super[1];
     document.getElementById("super").style.margin = "90px 0 3px 405px"
     
@@ -365,16 +386,21 @@ function atacar(){
     if(pontuacao <= 1000){
         document.getElementById("classificacaoPontos").innerHTML = "A DIFICULDADE DA SUA AVENTURA É: "  + classificacoes[0];
         document.getElementById("pontuação").innerHTML ="EXPERIÊNCIA: " + pontuacao;
+        document.getElementById("vidaInimigo").style.margin = "-40px 0 85px 775px"
+        document.getElementById("vidaInimigoImg").style.margin = "-122px 0 128px 765px"
            }else if(pontuacao <= 2000){
                document.getElementById("classificacaoPontos").innerHTML = "A DIFICULDADE DA SUA AVENTURA É: "  + classificacoes[1];
                document.getElementById("pontuação").innerHTML = "EXPERIÊNCIA: " + pontuacao;
+               document.getElementById("vidaInimigo").style.margin = "-40px 0 85px 775px"
+               document.getElementById("vidaInimigoImg").style.margin = "-122px 0 128px 765px"
                ataqueSuper = 2;
            }else if(pontuacao <= 5000){
                document.getElementById("classificacaoPontos").innerHTML = "A DIFICULDADE DA SUA AVENTURA É: "  + classificacoes[2];
                document.getElementById("pontuação").innerHTML = "EXPERIÊNCIA: " + pontuacao;
                danoInimigo = 2;
                document.getElementById("vidaSuper").style.margin = "-40px 0 150px 405px"
-               document.getElementById("vidaInimigo").style.margin = "-160px 0 120px 800px"
+               document.getElementById("vidaInimigo").style.margin = "-30px 0 120px 773px"
+               document.getElementById("vidaInimigoImg").style.margin = "-157px 0 100px 765px"
                
            }else if(pontuacao <= 7000){
                document.getElementById("classificacaoPontos").innerHTML = "A DIFICULDADE DA SUA AVENTURA É: "  + classificacoes[3];

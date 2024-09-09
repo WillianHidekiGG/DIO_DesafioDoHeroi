@@ -147,13 +147,26 @@ body{
     margin: 270px 0 5px 405px;
 }
 
+#vidaSuperImg{
+    width: 220px;
+    height: 50px;
+    background-repeat: no-repeat;
+}
+
 #nomeInimigo{
     margin:-40px 0 5px 345px;
 }
 
 #vidaInimigo{
-    margin: -100px 100px -230px 805px;
+    width: 155px;
+    height: 23px;
+}
 
+#vidaInimigoImg{
+    position: relative;
+    width: 220px;
+    height: 50px;
+    background-repeat: no-repeat;
 }
 
 #inimigo{
