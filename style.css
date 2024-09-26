@@ -124,6 +124,15 @@ body{
     font-size: 26px;
 }
 
+#fundoPontuacao{
+    position: absolute;
+    width: 1500px;
+    height: 150px;
+    z-index: -1;
+    background-repeat: no-repeat;
+    margin: -80px 0px 0px 220px;
+}
+
 #nomeSuper{
     margin:105px 0 5px 400px;
 }
