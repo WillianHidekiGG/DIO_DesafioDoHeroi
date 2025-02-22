@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -7,50 +8,50 @@
     <script src="confi.js"></script>
     <title>Herói</title>
     <audio id="musicaFundo" autoplay>
-       <source src="music/musica_principal2.mp3" type="audio/mpeg"> 
-       <source src="music/musica_principal2.ogg" type="audio/ogg">
+        <source src="music/musica_principal2.mp3" type="audio/mpeg">
+        <source src="music/musica_principal2.ogg" type="audio/ogg">
     </audio>
 </head>
+
 <body>
 
-   
+
 
     <div class="conteiner" id="conteiner1">
         <h1 id="titulo1">AVENTUREIRO OU AVENTUREIRA</h1>
-        <input type="text" name="nome" id="nome" placeholder="Digite o nome da AVENTUREIRA ou do AVENTUREIRO"/>
+        <input type="text" name="nome" id="nome" placeholder="Digite o nome da AVENTUREIRA ou do AVENTUREIRO" />
         <button id="confirmar" onclick="confirmar()"><span class="botao1">CONFIRMAR</span> </button>
     </div>
-    
+
     <div id="conteiner2">
         <div id="cenario"></div>
         <h1 id="classificacaoPontos"></h1>
         <div id="fundoPontuacao"> </div>
-        <p id="pontuação"></p>             
-        
+        <p id="pontuação"></p>
+
         <div class="conteiner3">
             <p id="nomeSuper"></p>
             <p id="nomeInimigo"></p>
             <div id="vidaSuper"></div>
-            <div id="vidaSuperImg"></div> 
+            <div id="vidaSuperImg"></div>
             <div id="vidaInimigo"></div>
             <div id="vidaInimigoImg"></div>
-             <div id="super"></div>
-             <div id="inimigo"></div>
+            <div id="super"></div>
+            <div id="inimigo"></div>
 
-    </div>
-            <div id="container4">
-            </div>
-            <div id="controles">
-                <div id="conteiner5">
+        </div>
+        <footer id="container4">
+        <div id="controles">
+            <div id="conteiner5">
                 <div class="botao2">
                     <button id="atacar" onclick="atacar()">ATACAR</button>
                 </div>
                 <div class="botao2">
                     <button id="fimAventura" onclick="fimAventura()">FIM DA AVENTURA</button>
                 </div>
-                
-                </div>
             </div>
+        </div>
+        </footer>
     </div>
     <div id="conteiner6">
         <div id="parabens"></div>
@@ -60,7 +61,8 @@
         <div id="fogos"></div>
         <div id="confete"></div>
         <div id="confete2"></div>
-        <button id="recarregar" onclick="recarregarAPagina()"> <span class="botao1">COMEÇAR NOVA AVENTURA!</span></button>
+        <button id="recarregar" onclick="recarregarAPagina()"> <span class="botao1">COMEÇAR NOVA
+                AVENTURA!</span></button>
     </div>
     <div id="conteiner7">
         <div id="cenarioGameOver"></div>
@@ -70,8 +72,10 @@
         <div id="nomeGameOver"></div>
         <div id="classificacaoFinalGameOver"></div>
         <div id="pontosFinaisGameOver"></div>
-        <button id="recarregar" onclick="recarregarAPagina()"> <span class="botao1">COMEÇAR NOVA AVENTURA!</span></button>
+        <button id="recarregar" onclick="recarregarAPagina()"> <span class="botao1">COMEÇAR NOVA
+                AVENTURA!</span></button>
     </div>
-    
+
 </body>
+
 </html>

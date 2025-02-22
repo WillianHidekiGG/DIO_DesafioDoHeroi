@@ -3,59 +3,66 @@
     src: url("font/MagicSound.ttf") format("truetype");
     font-weight: normal;
     font-style: normal;
-  }
-  @font-face {
+}
+
+@font-face {
     font-family: "MatSaleh";
     src: url("font/MatSaleh.ttf") format("truetype"), url("font/MatSaleh.otf") format("opentype");
     font-weight: normal;
     font-style: normal;
-  }
-  @font-face {
+}
+
+@font-face {
     font-family: "BERNARDWACKER";
     src: url("font/BERNARDWACKER.otf") format("opentype");
     font-weight: normal;
     font-style: normal;
-  }
-  @font-face {
+}
+
+@font-face {
     font-family: "HOtPotato";
     src: url("font/HotPotato.ttf") format("truetype"), url("font/HotPotato.otf") format("opentype");
     font-weight: normal;
     font-style: normal;
-  }  
-  @font-face {
+}
+
+@font-face {
     font-family: "MegaSurprise";
     src: url("font/MegaSurprise.ttf") format("truetype");
     font-weight: normal;
     font-style: normal;
-  }
-  @font-face {
+}
+
+@font-face {
     font-family: "Pixeled";
     src: url("font/Pixeled.ttf") format("truetype");
     font-weight: normal;
     font-style: normal;
-  }
+}
 
 
-body{
+body {
     width: 100%;
     height: 100%;
     max-width: 500px;
     max-height: 700px;
 }
 
-#conteiner1{
+#conteiner1 {
     display: block;
     width: 99vw;
     height: 57vh;
     padding-top: 40vh;
     text-align: center;
-    background-color:aquamarine;
+    background-color: aquamarine;
 }
-#titulo1{
+
+#titulo1 {
     font-family: 'MatSaleh', Times, serif;
     font-size: 56px;
 }
-#nome{
+
+#nome {
     width: 50%;
     height: 35px;
     max-width: 600px;
@@ -66,49 +73,49 @@ body{
     box-shadow: 2px 2px 30px 2px lightgrey;
 }
 
-#confirmar{
+#confirmar {
     margin: 20px 0 0 10px;
     --button_radius: 0.75em;
-  --button_color: #e8e8e8;
-  --button_outline_color: #000000;
-  font-family: 'BERNARDWACKER', Times, serif;
-  font-size: 25px;
-  font-weight: bold;
-  border: none;
-  border-radius: var(--button_radius);
-  background: var(--button_outline_color);
+    --button_color: #e8e8e8;
+    --button_outline_color: #000000;
+    font-family: 'BERNARDWACKER', Times, serif;
+    font-size: 25px;
+    font-weight: bold;
+    border: none;
+    border-radius: var(--button_radius);
+    background: var(--button_outline_color);
 }
 
-.botao1{
+.botao1 {
     display: block;
-  box-sizing: border-box;
-  font-family: 'BERNARDWACKER', Times, serif;
-  border: 1px auto auto auto solid var(--button_outline_color);
-  border-radius: var(--button_radius);
-  padding: 0.75em 1.5em;
-  background: var(--button_color);
-  color: var(--button_outline_color);
-  transform: translateY(-0.2em);
-  transition: transform 0.1s ease;
+    box-sizing: border-box;
+    font-family: 'BERNARDWACKER', Times, serif;
+    border: 1px auto auto auto solid var(--button_outline_color);
+    border-radius: var(--button_radius);
+    padding: 0.75em 1.5em;
+    background: var(--button_color);
+    color: var(--button_outline_color);
+    transform: translateY(-0.2em);
+    transition: transform 0.1s ease;
 }
 
-#confirmar:hover .botao1{
+#confirmar:hover .botao1 {
     transform: translateY(-0.33em);
 }
 
-#confirmar:active .confirmar{
+#confirmar:active .confirmar {
     transform: translateY(0);
 }
 
-#conteiner2{
+#conteiner2 {
     position: relative;
     display: none;
     height: 94vh;
     width: 99vw;
 }
 
-#cenario{
-    width:100%;
+#cenario {
+    width: 100%;
     height: 105%;
     margin-top: -20px;
     position: absolute;
@@ -116,62 +123,65 @@ body{
 
 
 
-#classificacaoPontos, #pontuação{
+#classificacaoPontos,
+#pontuação {
     text-align: center;
 }
 
-#pontuação{
+#pontuação {
     font-size: 26px;
 }
 
-#fundoPontuacao{
+#fundoPontuacao {
     position: absolute;
     width: 1500px;
     height: 150px;
     z-index: -1;
     background-repeat: no-repeat;
-    margin: -80px 0px 0px 220px;
+    margin: -4.3% 0 0 26%;
 }
 
-#nomeSuper{
-    margin:105px 0 5px 400px;
+#nomeSuper {
+    margin: 105px 0 5px 400px;
 }
 
-#vidaSuper{
+#vidaSuper {
     width: 118px;
-    height: 20px; 
-    margin: 135px 0 0px 405px;
+    height: 20px;
+    margin: 20% 0 -3.5% 17%;
     text-align: center;
 }
 
-#nomeSuper, #vidaInimigo, #nomeInimigo{
+#nomeSuper,
+#vidaInimigo,
+#nomeInimigo {
     width: 128px;
     text-align: center;
 }
 
-#super{
+#super {
     width: 128px;
     height: 81px;
     background-repeat: no-repeat;
-    margin: 270px 0 5px 405px;
+    margin: 24% 0 1% 21.5%;
 }
 
-#vidaSuperImg{
+#vidaSuperImg {
     width: 220px;
     height: 50px;
     background-repeat: no-repeat;
 }
 
-#nomeInimigo{
-    margin:-40px 0 5px 345px;
+#nomeInimigo {
+    margin: -40px 0 5px 345px;
 }
 
-#vidaInimigo{
+#vidaInimigo {
     width: 155px;
     height: 23px;
 }
 
-#vidaInimigoImg{
+#vidaInimigoImg {
     position: relative;
     width: 220px;
     height: 50px;
@@ -179,7 +189,7 @@ body{
     transform: rotateY(180deg);
 }
 
-#inimigo{
+#inimigo {
     position: relative;
     width: 130px;
     height: 138px;
@@ -188,19 +198,19 @@ body{
     transform: scaleX(-1);
 }
 
-#conteiner3{
+#conteiner3 {
     width: 30px;
     height: 30px;
     margin: 5px 0 0 5px;
 
 }
 
-#conteiner5{
+#conteiner5 {
     margin: 25px 0 0 450px;
 }
 
 
-#controles{
+#controles {
     width: 100%;
     height: 19%;
     position: absolute;
@@ -209,141 +219,144 @@ body{
     box-shadow: inset black;
 }
 
-.botao2{
+.botao2 {
     margin-left: 125px;
-    float: left; 
+    float: left;
     position: relative;
-  width: 2.5em;
-  height: 2em;
-  background-color: #644dff;
-  overflow: hidden;
-  border-radius: 100%;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  scale: 2;
-  box-shadow: 0 .5em #4836bb;
-  transition: all .1s ease;
-  filter: drop-shadow(0 6px 2px #4836bb38);
-  border: 1px solid #4836bb;
+    width: 2.5em;
+    height: 2em;
+    background-color: #644dff;
+    overflow: hidden;
+    border-radius: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    scale: 2;
+    box-shadow: 0 .5em #4836bb;
+    transition: all .1s ease;
+    filter: drop-shadow(0 6px 2px #4836bb38);
+    border: 1px solid #4836bb;
 }
 
-#atacar{
+#atacar {
     font-weight: 47;
     font-size: 82%;
     font-family: 'HotPotato', Times, serif;
-    padding-right:38px ;
-  cursor: pointer;
-  position: absolute;
-  text-transform: uppercase;
-  height: 110%;
-  width: 110%;
-  background-color: #644dff;
-  color: RED;
+    padding-right: 38px;
+    cursor: pointer;
+    position: absolute;
+    text-transform: uppercase;
+    height: 110%;
+    width: 110%;
+    background-color: #644dff;
+    color: RED;
 }
+
 .botao2:has(#atacar:active) {
     box-shadow: none;
     margin-top: 1em;
     filter: drop-shadow(0 3px 1px #4836bbbe);
-  }
-  
-#fimAventura{
+}
+
+#fimAventura {
     font-weight: 50;
     font-size: 40%;
     font-family: 'BERNARDWACKER', Times, serif;
-  cursor: pointer;
-  position: absolute;
-  text-transform: uppercase;
-  height: 110%;
-  width: 110%;
-  background-color: #644dff;
-  color: rgb(0, 0, 0);
+    cursor: pointer;
+    position: absolute;
+    text-transform: uppercase;
+    height: 110%;
+    width: 110%;
+    background-color: #644dff;
+    color: rgb(0, 0, 0);
 }
+
 .botao2:has(#fimAventura:active) {
     box-shadow: none;
     margin-top: 1em;
     filter: drop-shadow(0 3px 1px #4836bbbe);
-  }
+}
 
-#conteiner6{
+#conteiner6 {
     display: none;
     height: 97vh;
     width: 99vw;
     background-color: blueviolet;
 }
 
-#parabens, #texto{
+#parabens,
+#texto {
     text-align: center;
     font-weight: bold;
 }
 
-#parabens{    
+#parabens {
     padding: 2% 0 0 0;
     font-family: 'MegaSurprise', Times, serif;
     font-size: 120px;
     font-weight: 5;
-    color:yellow
+    color: yellow
 }
 
-#texto{
+#texto {
     width: 1000px;
     height: 100px;
     margin: 40px auto -90px auto;
     font-size: 30px;
-    font-family:'Pixeled', Courier, monospace;
+    font-family: 'Pixeled', Courier, monospace;
 }
 
-#classificacaoFinal{
+#classificacaoFinal {
     text-align: center;
     font-size: 40px;
     margin: 120px 0 0 0;
     font-weight: bold;
-    font-family:'Pixeled', Courier, monospace;
+    font-family: 'Pixeled', Courier, monospace;
 }
 
-#pontosFinais{
+#pontosFinais {
     text-align: center;
     font-size: 40px;
     margin: 5px 0 -30px 0;
     font-weight: bold;
-    font-family:'Pixeled', Courier, monospace;
+    font-family: 'Pixeled', Courier, monospace;
 }
 
-#recarregar{
+#recarregar {
     position: absolute;
     margin: 35% 0 0 40%;
     --button_radius: 0.75em;
-  --button_color: #e8e8e8;
-  --button_outline_color: #000000;
-  font-size: 17px;
-  font-weight: bold;
-  border: none;
-  border-radius: var(--button_radius);
-  background: var(--button_outline_color);
+    --button_color: #e8e8e8;
+    --button_outline_color: #000000;
+    font-size: 17px;
+    font-weight: bold;
+    border: none;
+    border-radius: var(--button_radius);
+    background: var(--button_outline_color);
 }
-#recarregar:hover .botao1{
+
+#recarregar:hover .botao1 {
     transform: translateY(-0.33em);
 }
 
-#recarregar:active .confirmar{
+#recarregar:active .confirmar {
     transform: translateY(0);
 }
 
-#conteiner7{
+#conteiner7 {
     display: none;
     height: 95vh;
     width: 99vw;
 }
 
-#cenarioGameOver{
-    width:100%;
+#cenarioGameOver {
+    width: 100%;
     height: 100%;
     margin-top: -20px;
     position: absolute;
 }
 
-#gameOver
-{
+#gameOver {
     position: absolute;
     margin: -2% 0 0 15%;
     font-family: 'MegaSurprise', Times, serif;
@@ -356,16 +369,16 @@ body{
     filter: drop-shadow(5px 5px #000000);
 }
 
-#lapide{
+#lapide {
     position: absolute;
-    width:110%;
+    width: 110%;
     height: 85%;
-    margin: 5% 0 0 -15% ;
+    margin: 5% 0 0 -15%;
     background-image: url("img/cenario/game_over/lapide.png");
     z-index: -1;
 }
 
-#rip{
+#rip {
     position: absolute;
     margin: 13% 0 0 42%;
     font-size: 100px;
@@ -374,7 +387,7 @@ body{
     filter: drop-shadow(3px 1px 0px rgb(212, 220, 255));
 }
 
-#nomeGameOver{
+#nomeGameOver {
     position: absolute;
     width: 35%;
     margin: 19% 0 0 32%;
@@ -385,7 +398,7 @@ body{
     filter: drop-shadow(3px 1px 0px rgb(212, 220, 255));
 }
 
-#classificacaoFinalGameOver{
+#classificacaoFinalGameOver {
     position: absolute;
     width: 47%;
     font-size: 25px;
@@ -396,7 +409,7 @@ body{
     filter: drop-shadow(3px 1px 0px rgb(212, 220, 255));
 }
 
-#pontosFinaisGameOver{
+#pontosFinaisGameOver {
     position: absolute;
     width: 39%;
     font-size: 25px;
